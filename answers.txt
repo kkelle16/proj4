@@ -1,0 +1,11 @@
+1. I represented the map as a vector or vector of Nodes, where Node is a struct
+   I created that held the data of index, back edge, distance, cost, and the tile char
+
+2. The complexity of my implementation of dijkstras is O(logn) I used a multimap in dijkstas and once the node had been visited it was erased from the mutimap
+    and the mutimap never had to be iterated through, since I had an iterator to constantly point to the beginning and the Nodes were keyed on distance, so the
+    smallest distances always got priority over the larger ones. All neighbor nodes are added to the mutimap, so there could be multiple instances of nodes in the
+    mutimap but I combatted this by before moving onto the next node I checked if the iterator pointed to a node that had yet to be visited and if so it continued
+    otherwise the node would be erased from the multimap
+
+3. My implementation scales well, even with a 1000 by 1000 map it took sometimes a max of two seconds to run, average all tests could be performed in aproximatley one second.
+    The smaller N values executed even faster, almost instantaneously. Memory usage pretty much remained constant throughout all trials.
